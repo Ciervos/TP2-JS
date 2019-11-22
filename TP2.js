@@ -4,10 +4,7 @@ Ariana funciones 1,2 y 4
 Luján funciones 3, 5 y 6
 Rocio funciones 7,8 y 9
 
-Sobre el archivo test: la idea es que cada una tenga su propio archivo test para trabajar más comodo
-xq despues aunque tengamos los 
-tres archivos separados la consola los lee juntos.
-Trabajar en branches.
+
 */
 
 
