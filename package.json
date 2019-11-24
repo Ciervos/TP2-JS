@@ -1,0 +1,19 @@
+{
+  "name": "tp2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "TP2.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ciervos/TP2-JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ciervos/TP2-JS/issues"
+  },
+  "homepage": "https://github.com/Ciervos/TP2-JS#readme"
+}
