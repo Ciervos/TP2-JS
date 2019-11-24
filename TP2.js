@@ -42,6 +42,7 @@ const cantidadVentasComponente =(componente) =>{
 };
 
 const ventasVendedora =(nombre) =>{
+  
 };
 
 const componenteMasVendido =() =>{

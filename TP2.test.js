@@ -13,3 +13,5 @@ ventaPromedio = trabajo.ventaPromedio;
 obtenerIdVenta = trabajo.obtenerIdVenta;
 agregarVenta = trabajo.agregarVenta;
 
+
+
