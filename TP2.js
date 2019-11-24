@@ -71,7 +71,7 @@ module.exports = {
     vendedoras,
     ventas,
     precios,
-    surcursales,
+    sucursales,
     precioMaquina,
     cantidadVentasComponente,
     ventasVendedora,
