@@ -17,4 +17,17 @@ test('Funcion 3: retorna el importe total de ventas realizadas por vendedora', (
  
     expect(ventasVendedora("Grace")).toBe(990);
 
-   });
+});
+
+test('Funcion 5: retorna el importe de las ventas totales realizadas por una sucursal', ()=>{
+ 
+    expect(ventasSucursal("Centro")).toBe(4195);
+
+});   
+
+test('Funcion 6: Devuelve el nombre de la vendedora que más ingresos generó', ()=>{
+ 
+    expect(mejorVendedora() ).toBe("Grace");
+
+});  
+
