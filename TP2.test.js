@@ -15,3 +15,22 @@ agregarVenta = trabajo.agregarVenta;
 
 
 
+
+
+
+
+
+
+test ('precio de cada componente', ()=>{
+    expect (traerPrecioDeComponente('Monitor GPRS 3000')).toBe(200)
+});
+test ('suma total de las ventas', ()=>{
+  expect (ventaSumaTotal()).toBe(2120)
+});
+test ('suma total de productos vendidos', ()=>{
+  expect (totalProductoVendido()).toBe(14)
+});
+test ('promedio de venta total', ()=>{
+  expect (ventaPromedio()).toBe(151)   
+});
+

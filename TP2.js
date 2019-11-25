@@ -4,7 +4,6 @@ Ariana funciones 1,2 y 4
 Luján funciones 3, 5 y 6
 Rocio funciones 7,8 y 9
 
-
 */
 
 
@@ -54,8 +53,43 @@ const ventasSucursal =(sucursal) =>{
 const mejorVendedora =() =>{
 };
 
+// 7.-Hallando venta promedio de la venta total:
 const ventaPromedio =() =>{
+  let sumaTotal = ventaSumaTotal();
+    let cantProductos = totalProductoVendido();
+
+    let promedio = sumaTotal / cantProductos;
+    
+    return Math.floor(promedio);
 };
+
+//halando el total de ventas:
+const ventaSumaTotal = () => {
+  let sumaTotal = ventas.reduce((acumulador, venta) => {
+    for(componente of venta[6]){
+      let precioDeComponente = traerPrecioDeComponente(componente);
+      acumulador += precioDeComponente;
+    }
+    return acumulador;
+  }, 0)
+  return sumaTotal;
+}
+
+//hallando el precio por componete llamado:
+const traerPrecioDeComponente = (componente) => {
+let precioComponente = precios.find(elemento => elemento[0] === componente );
+return precioComponente[1];
+}
+
+//hallando el total de productos vendidos:
+const totalProductoVendido = ()=>{
+let cantProductosVendidos = ventas.reduce((acumulador,venta) =>{
+    let cantComponentes = venta[6].length;
+    acumulador += cantComponentes;
+  return acumulador;
+}, 0);
+return cantProductosVendidos;
+}
 
 const obtenerIdVenta =() =>{
 };
