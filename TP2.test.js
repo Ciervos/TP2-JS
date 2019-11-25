@@ -33,4 +33,10 @@ test ('suma total de productos vendidos', ()=>{
 test ('promedio de venta total', ()=>{
   expect (ventaPromedio()).toBe(151)   
 });
+test ('obteniendo un id de venta aleatorio entre 100000000 y 999999999', ()=>{
 
+    let idVenta = obtenerIdVenta ();
+    let valorAleatorio = (idVenta > 100000000 && idVenta  < 999999999);
+  
+    expect (valorAleatorio).toBe(true)   
+  });

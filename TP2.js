@@ -91,7 +91,12 @@ let cantProductosVendidos = ventas.reduce((acumulador,venta) =>{
 return cantProductosVendidos;
 }
 
+//8.- Obtener el Id de venta entre 100000000 y 999999999:
+// idAleatorio = Math.floor(Math.random()*(Y-X))+X
+
 const obtenerIdVenta =() =>{
+  const IdAleatorio = Math.floor(Math.random() * (999999999 - 100000000) + 100000000);
+  return IdAleatorio;
 };
 
 const agregarVenta =(dia, mes, anio, vendedora, sucursal, componentes) =>{
