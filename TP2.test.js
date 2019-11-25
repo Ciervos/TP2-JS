@@ -37,6 +37,11 @@ test ('obteniendo un id de venta aleatorio entre 100000000 y 999999999', ()=>{
 
     let idVenta = obtenerIdVenta ();
     let valorAleatorio = (idVenta > 100000000 && idVenta  < 999999999);
-  
+
     expect (valorAleatorio).toBe(true)   
-  });
+});
+test ('agregando venta nueva', ()=>{
+    const cantActual= ventas.length;
+    agregarVenta(26, 12, 2019, 'harriet', 'belgrano', ['RAM Quinston Fury','HDD Wezter Dishital']);
+    expect(ventas).toHaveLength(cantActual + 1);
+});
