@@ -42,6 +42,24 @@ const cantidadVentasComponente =(componente) =>{
 };
 
 const ventasVendedora =(nombre) =>{
+  let elementosVendidos = [];
+  let suma = 0;
+  for (let i=0;i<ventas.length;i++){
+    if(nombre == ventas[i][4]){
+      for(let x=0;x<ventas[i][4].length;x++){
+       elementosVendidos.push(ventas[i][6][x]);
+      }
+    }
+  }
+
+  for (let i=0;i<elementosVendidos.length;i++){
+    for(let x=0;x<precios.length;x++){
+      if(elementosVendidos[i]==precios[x][0]){
+          suma = suma + precios[x][1];  
+      }
+    }
+  }
+ return suma;
 };
 
 const componenteMasVendido =() =>{
