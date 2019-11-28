@@ -34,8 +34,21 @@ const sucursales = ['Centro', 'Caballito'];
 
 
 /* --- funciones --- */
-const precioMaquina =(componentes) =>{
+//1.- hallar precio de maquina:
+
+//hallando el precio por componente:
+const precioDeComponente = (componente) => {
+  let componenteNombrePrecio = precios.find(elemento => elemento[0] === componente);
+  return componenteNombrePrecio[1];
+}
+const precioMaquina =(componentes)=>{
+  return componentes.reduce((acumulador, componente)=>{
+    acumulador += precioDeComponente(componente);
+    return acumulador;
+  },0)
 };
+
+//2.- 
 
 const cantidadVentasComponente =(componente) =>{
 };
@@ -54,41 +67,29 @@ const mejorVendedora =() =>{
 };
 
 // 7.-Hallando venta promedio de la venta total:
-const ventaPromedio =() =>{
+const ventaPromedio = () =>{
   let sumaTotal = ventaSumaTotal();
-    let cantProductos = totalProductoVendido();
-
-    let promedio = sumaTotal / cantProductos;
-    
-    return Math.floor(promedio);
+  let cantProductos = totalProductoVendido();
+  let promedio = sumaTotal / cantProductos;
+  return Math.floor(promedio);
 };
 
-//halando el total de ventas:
+//halando sumatotal:
 const ventaSumaTotal = () => {
-  let sumaTotal = ventas.reduce((acumulador, venta) => {
-    for(componente of venta[6]){
-      let precioDeComponente = traerPrecioDeComponente(componente);
-      acumulador += precioDeComponente;
-    }
+  return ventas.reduce((acumulador, venta) => {
+    const componentes = venta[6];  
+    acumulador += precioMaquina(componentes);
     return acumulador;
-  }, 0)
-  return sumaTotal;
-}
-
-//hallando el precio por componete llamado:
-const traerPrecioDeComponente = (componente) => {
-let precioComponente = precios.find(elemento => elemento[0] === componente );
-return precioComponente[1];
+  }, 0);
 }
 
 //hallando el total de productos vendidos:
 const totalProductoVendido = ()=>{
-let cantProductosVendidos = ventas.reduce((acumulador,venta) =>{
+  return ventas.reduce((acumulador,venta) =>{
     let cantComponentes = venta[6].length;
     acumulador += cantComponentes;
-  return acumulador;
-}, 0);
-return cantProductosVendidos;
+    return acumulador;
+  }, 0);
 }
 
 //8.- Obtener el Id de venta entre 100000000 y 999999999:

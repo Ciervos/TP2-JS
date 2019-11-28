@@ -22,7 +22,10 @@ agregarVenta = trabajo.agregarVenta;
 
 
 test ('precio de cada componente', ()=>{
-    expect (traerPrecioDeComponente('Monitor GPRS 3000')).toBe(200)
+  expect (precioDeComponente('Monitor GPRS 3000')).toBe(200)
+});
+test('precio de cada maquina', ()=>{
+  expect (precioMaquina(['Monitor GPRS 3000', 'Motherboard ASUS 1500'])).toBe(320)
 });
 test ('suma total de las ventas', ()=>{
   expect (ventaSumaTotal()).toBe(2120)
@@ -35,12 +38,13 @@ test ('promedio de venta total', ()=>{
 });
 test ('obteniendo un id de venta aleatorio entre 100000000 y 999999999', ()=>{
 
-    let idVenta = obtenerIdVenta ();
-    let valorAleatorio = (idVenta > 100000000 && idVenta  < 999999999);
-    expect (valorAleatorio).toBe(true)   
+  let idVenta = obtenerIdVenta ();
+  let valorAleatorio = (idVenta > 100000000 && idVenta  < 999999999);
+
+  expect (valorAleatorio).toBe(true)   
 });
 test ('agregando venta nueva', ()=>{
-    const cantActual= ventas.length;
-    agregarVenta(26, 12, 2019, 'harriet', 'belgrano', ['RAM Quinston Fury','HDD Wezter Dishital']);
-    expect(ventas).toHaveLength(cantActual + 1);
+  const cantActual= ventas.length;
+  agregarVenta(26, 12, 2019, 'harriet', 'belgrano', ['RAM Quinston Fury','HDD Wezter Dishital']);
+  expect(ventas).toHaveLength(cantActual + 1);
 });
