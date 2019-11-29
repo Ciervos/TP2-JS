@@ -1,13 +1,3 @@
-/*Comentarios para luego borrar:
-
-Ariana funciones 1,2 y 4
-Luján funciones 3, 5 y 6
-Rocio funciones 7,8 y 9
-
-
-*/
-
-
 const vendedoras = ["Ada", "Grace", "Hedy", "Sheryl"];
 
 const ventas = [
