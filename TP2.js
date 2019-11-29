@@ -9,8 +9,7 @@ Rocio funciones 7,8 y 9
 
 const vendedoras = ["Ada", "Grace", "Hedy", "Sheryl"];
 
-const ventas = [
-  [ 100000000, 4, 2, 2019, 'Grace', 'Centro', ['Monitor GPRS 3000', 'Motherboard ASUS 1500'] ],
+const ventas = [[ 100000000, 4, 2, 2019, 'Grace', 'Centro', ['Monitor GPRS 3000', 'Motherboard ASUS 1500'] ],
   [ 100000001, 1, 1, 2019, 'Ada', 'Centro', ['Monitor GPRS 3000', 'Motherboard ASUS 1500'] ],
   [ 100000002, 2, 1, 2019, 'Grace', 'Caballito', ['Monitor ASC 543', 'Motherboard MZI', 'HDD Toyiva'] ],
   [ 100000003, 10, 1, 2019, 'Ada', 'Centro', ['Monitor ASC 543', 'Motherboard ASUS 1200'] ],
@@ -51,12 +50,31 @@ const precioMaquina =(componentes)=>{
 //2.- 
 
 const cantidadVentasComponente =(componente) =>{
+  return ventas.reduce((acumulador, venta)=>{
+    acumulador += encontrarComponenteEnVenta(venta, componente);
+    return acumulador;
+  },0)
 };
 
-const ventasVendedora =(nombre) =>{
-  
+const encontrarComponenteEnVenta = (venta, componente) =>{
+  const filtro = venta[6].filter(elemento => elemento == componente)
+  return filtro.length
+}; 
+
+//3.- 
+const ventasVendedora = (nombre) =>{
+  return ventaPorVendedora(nombre).reduce((acumulador, venta)=>{
+    acumulador += precioMaquina(venta[6])
+    return acumulador;
+  }, 0);
 };
 
+const ventaPorVendedora = (nombre) =>{
+  const encontrarVenta = ventas.filter(venta =>venta[4]== nombre)
+  return encontrarVenta;
+} 
+
+// 4.- 
 const componenteMasVendido =() =>{
 };
 
@@ -68,9 +86,7 @@ const mejorVendedora =() =>{
 
 // 7.-Hallando venta promedio de la venta total:
 const ventaPromedio = () =>{
-  let sumaTotal = ventaSumaTotal();
-  let cantProductos = totalProductoVendido();
-  let promedio = sumaTotal / cantProductos;
+  let promedio = ventaSumaTotal()/ totalProductoVendido();
   return Math.floor(promedio);
 };
 
