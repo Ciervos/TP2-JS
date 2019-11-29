@@ -16,12 +16,14 @@ agregarVenta = trabajo.agregarVenta;
 test('Funcion 3: retorna el importe total de ventas realizadas por vendedora', ()=>{
  
     expect(ventasVendedora("Grace")).toBe(990);
+    expect(ventasVendedora("Ada")).toBe(670);
     
 });
 
 test('Funcion 5: retorna el importe de las ventas totales realizadas por una sucursal', ()=>{
  
-    expect(ventasSucursal("Centro")).toBe(4195);
+    
+    expect(ventasSucursal("Centro")).toBe(990);
 
 });   
 
