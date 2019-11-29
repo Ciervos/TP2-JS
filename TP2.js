@@ -42,6 +42,7 @@ const cantidadVentasComponente =(componente) =>{
 };
 
 const ventasVendedora =(nombre) =>{
+
   let elementosVendidos = [];
   let suma = 0;
   for (let i=0;i<ventas.length;i++){
