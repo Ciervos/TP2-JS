@@ -164,7 +164,7 @@ const obtenerIdVenta = () => {
   return IdAleatorio;
 };
 
-//9.- agregarVenta(id,dia, mes, anio, vendedora, sucursal, componentes)
+//9:
 const agregarVenta = (dia, mes, anio, vendedora, sucursal, componentes) =>{
   ventas.push([obtenerIdVenta(), dia, mes, anio, vendedora, sucursal, componentes]);
 };
