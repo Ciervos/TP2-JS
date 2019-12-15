@@ -55,6 +55,8 @@ const ventasVendedora = (nombre) => {
   let suma = 0;
   for (let i = 0; i < ventas.length; i++){
     if(nombre == ventas[i][4]){
+      // acá debería ser ventas[i][6].length porque estoy 
+      // necesitando CADA item dentro de ventas[i][6], no de 4.
       for(let x = 0; x < ventas[i][4].length; x++){
         elementosVendidos.push(ventas[i][6][x]);
       }
@@ -70,6 +72,7 @@ const ventasVendedora = (nombre) => {
   return suma;
 };
 
+// muy bien la otra solucion
 /* Otra posible solucion:
 const ventasVendedora = (nombre) => {
   return ventaPorVendedora(nombre).reduce((acumulador, venta)=> {
@@ -100,6 +103,7 @@ const ventasSucursal = (sucursal) => {
   let suma = 0;
   for (let i = 0; i < ventas.length; i++){
     if(sucursal == ventas[i][5]){
+      // ventas[i][6]
       for(let x = 0; x < ventas[i][5].length; x++){
         elementosVendidos.push(ventas[i][6][x]);
       }
@@ -137,6 +141,8 @@ const mejorVendedora = () => {
 
 // 7:
 const ventaPromedio = () => {
+  // Deberia ser dividido ventas.length. Estamos buscando el promedio de ventas
+  // no el promedio de productos vendidos
   let promedio = ventaSumaTotal() / totalProductoVendido();
   return Math.floor(promedio);
 };
