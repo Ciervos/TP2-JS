@@ -55,7 +55,7 @@ const ventasVendedora = (nombre) => {
   let suma = 0;
   for (let i = 0; i < ventas.length; i++){
     if(nombre == ventas[i][4]){
-      for(let x = 0; x < ventas[i][4].length; x++){
+      for(let x = 0; x < ventas[i][6].length; x++){
         elementosVendidos.push(ventas[i][6][x]);
       }
     }
@@ -100,7 +100,7 @@ const ventasSucursal = (sucursal) => {
   let suma = 0;
   for (let i = 0; i < ventas.length; i++){
     if(sucursal == ventas[i][5]){
-      for(let x = 0; x < ventas[i][5].length; x++){
+      for(let x = 0; x < ventas[i][6].length; x++){
         elementosVendidos.push(ventas[i][6][x]);
       }
     }
@@ -137,7 +137,7 @@ const mejorVendedora = () => {
 
 // 7:
 const ventaPromedio = () => {
-  let promedio = ventaSumaTotal() / totalProductoVendido();
+  let promedio = ventaSumaTotal() / ventas.length;
   return Math.floor(promedio);
 };
 //halando sumatotal:
@@ -148,14 +148,7 @@ const ventaSumaTotal = () => {
     return acumulador;
   }, 0);
 }
-//hallando el total de productos vendidos:
-const totalProductoVendido = () => {
-  return ventas.reduce((acumulador, venta) => {
-    let cantComponentes = venta[6].length;
-    acumulador += cantComponentes;
-    return acumulador;
-  }, 0);
-}
+
 
 //8:
 //Se usa la siguiente formulacion: idAleatorio = Math.floor(Math.random()*(Y-X))+X
@@ -187,7 +180,6 @@ module.exports = {
   ventasSucursal,
   mejorVendedora,
   ventaPromedio,
-  totalProductoVendido,
   ventaSumaTotal, 
   obtenerIdVenta,
   agregarVenta,
