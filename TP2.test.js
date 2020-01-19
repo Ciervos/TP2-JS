@@ -48,10 +48,7 @@ test('Función 6: Devuelve el nombre de la vendedora que más ingresos generó',
     expect(mejorVendedora() ).toBe("Grace");
 }); 
 test('Función 7: promedio de venta total', () => {
-    expect(ventaPromedio()).toBe(151)   
-});
-test('suma total de productos vendidos', () => {
-  expect(totalProductoVendido()).toBe(14)
+    expect(ventaPromedio()).toBe(353)   
 });
 test('venta suma total', () => {
   expect(ventaSumaTotal()).toBe(2120)
